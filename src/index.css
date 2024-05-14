@@ -1,68 +1,196 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+/* html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+} */
 
 body {
+  font-family: sans-serif;
+  color: #111;
+}
+
+html,
+body,
+#root {
   margin: 0;
+  height: 100%;
+}
+
+#root {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+header {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  font-weight: 700;
+  align-items: center;
 }
 
-button {
+.logo {
+  text-decoration: none;
+  display: block;
+  line-height: 1;
+}
+
+header a,
+header a:focus,
+header a:active,
+header a:visited {
+  color: #111;
+}
+
+header a:hover {
+  color: #333;
+}
+
+header select {
+  margin-left: 1em;
+}
+
+.overview-example__add {
+  display: none;
+}
+
+.react-flow__node a {
+  font-weight: 700;
+  color: #111;
+}
+
+.react-flow__node.dark-node {
+  background: #0041d0;
+  color: #f8f8f8;
+}
+
+.react-flow__node.dark {
+  background: #557;
+  color: #f8f8f8;
+}
+
+.react-flow__node-selectorNode {
+  font-size: 12px;
+  background: #f0f2f3;
+  border: 1px solid 555;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.react-flow__node-selectorNode .react-flow__handle {
+  border-color: #f0f2f3;
+}
+
+@media screen and (min-width: 768px) {
+  .overview-example__add {
+    display: block;
+  }
+}
+
+.dndflow .dndnode.input {
+  background-color: #b0f0e2;
+  margin-top: 10px;
+  border: 1px solid blueviolet;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  padding: 5px;
+  background-color: #b0f0e2;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.dndflow .dndnode.output {
+  border-color: #ff0072;
+}
+
+.dndflow .dndnode {
+  align-items: center;
+  border: 1px solid #1a192b;
+  border-radius: 2px;
+  cursor: grab;
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  padding: 4px;
+}
+
+.dndflow .dndnode,
+.dndflow aside .description {
+  margin-bottom: 10px;
+}
+
+.dndflow {
+  flex-direction: row;
+  display: flex;
+  height: 100vh;
+}
+
+.dndflow aside {
+  border-right: 1px solid #eee;
+  padding: 15px 10px;
+  font-size: 12px;
+  background: #fcfcfc;
+  width: 35vh;
+}
+
+.dndflow aside > * {
+  margin-bottom: 10px;
+  cursor: grab;
+}
+
+.dndflow aside .description {
+  margin-bottom: 10px;
+}
+
+.dndflow .reactflow-wrapper {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.saveBtn {
+  background-color: #b0f0e2;
+  margin-top: 10px;
+  justify-content: center;
+  border: 1px solid blueviolet;
+  border-radius: 8px;
+  width: 100px;
+  padding: 5px;
+  position: relative;
+  left: 81%;
+}
+
+@media screen and (min-width: 768px) {
+  .dndflow {
+    flex-direction: row;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+
+  .dndflow aside {
+    width: 20%;
+    max-width: 180px;
   }
 }
+
+.updatenode__controls {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  z-index: 4;
+  font-size: 12px;
+}
+
+.updatenode__controls label {
+  display: block;
+}
+
+.updatenode__bglabel {
+  margin-top: 10px;
+}
+
+.updatenode__checkboxwrapper {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
